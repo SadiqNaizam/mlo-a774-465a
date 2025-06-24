@@ -1,14 +1,30 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from 'react';
 
-const Index = () => {
+import PageHeader from '../components/Dashboard/PageHeader';
+import StatsCardGrid from '../components/Dashboard/StatsCardGrid';
+import MainAppLayout from '../components/layout/MainAppLayout';
+
+/**
+ * Dashboard Overview Page
+ *
+ * This is the main page for the dashboard, presenting a high-level
+ * overview of key metrics. It serves as the primary view for the user upon login.
+ * The page is composed of several high-level components:
+ * - PageHeader: Displays the main title of the page.
+ * - StatsCardGrid: A grid of cards showing important statistics.
+ *
+ * These components are rendered within the MainAppLayout, which provides the
+ * consistent header and overall page structure.
+ */
+const IndexPage: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <MainAppLayout>
+      <div className="flex flex-col gap-6">
+        <PageHeader />
+        <StatsCardGrid />
       </div>
-    </div>
+    </MainAppLayout>
   );
 };
 
-export default Index;
+export default IndexPage;
